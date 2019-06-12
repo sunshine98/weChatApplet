@@ -1,0 +1,9 @@
+<!-- 用来编写页面骨架的文件 -->
+<!-- view类似html中的<div>标签，两个用途：1.作为容器2.分隔文档 -->
+<view class='container'>
+  <image src='../../images/avatar/1.png' class='user-avatar'></image>
+  <text class='user-name'>Hello 刘扬俊</text>
+  <view class='moto-container' bind:tap='onTap'>
+    <text class='moto'>开启小程序之旅</text>
+  </view>
+</view>
