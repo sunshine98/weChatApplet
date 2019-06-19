@@ -9,6 +9,16 @@ Page({
   data: {
     navigateTitle: "",
     movies: [],
+    requestUrl: "",
+    totalCount: 0,
+    isEmpty: true,
+  },
+  /**
+   * 【更多电影页面】下滑数据加载
+   */
+  onScrollLower: function(event) {
+    var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
+    util.http(nextUrl, this.processDoubanData);
   },
 
   /**
@@ -32,10 +42,13 @@ Page({
         dataUrl = app.globalData.doubanBase + "/v2/movie/top250";
         break;
     };
+    this.setData({
+      requestUrl: dataUrl,
+    });
     util.http(dataUrl, this.processDoubanData);
 
   },
-  processDoubanData: function (moviesDouban) {
+  processDoubanData: function(moviesDouban) {
     var movies = [];
     for (var idx in moviesDouban.subjects) {
       var subject = moviesDouban.subjects[idx];
@@ -52,10 +65,23 @@ Page({
       }
       movies.push(temp);
     }
-
+    var totalMovies = {};
+  
+    var tempTotalCount = this.data.totalCount + 20;
+    //如果不是第一次加载电影数据
+    if(!this.data.isEmpty){
+      var oldMovies=this.data.movies;
+      var newMovies=oldMovies.concat(movies);
+    }else{
+      newMovies=movies;
+      this.setData({
+        isEmpty:false,
+      });
+    }
 
     this.setData({
-      movies: movies,
+      movies: newMovies,
+      totalCount: tempTotalCount,
     });
   },
 
