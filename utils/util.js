@@ -20,7 +20,7 @@ function http(url,callBack) {
     url: url,
     method: 'GET',
     header: {
-      "content-type": ""
+      "content-type": "json"
     },
     success: function(res) {
       callBack(res.data);

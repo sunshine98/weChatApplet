@@ -26,6 +26,7 @@ Page({
       movies:movies,
       isEmpty:isEmpty,
     });
+    this.data.totalCount=0;
     util.http(refreshUrl,this.processDoubanData);
     wx.showNavigationBarLoading();
   },
