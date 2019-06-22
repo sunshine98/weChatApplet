@@ -10,7 +10,9 @@ Page({
     inTheaters: {},
     coming_soon: {},
     top250: {},
-
+    containerShow: true,
+    searchPannelShow: false,
+    searchResult: {},
   },
   onMoreTap: function(event) {
     var category = event.currentTarget.dataset.category;
@@ -18,6 +20,43 @@ Page({
     wx.navigateTo({
       url: 'more-movie/more-movie?category=' + category,
     })
+  },
+  /**
+   * 点击电影页面触发
+   * 跳转至电影详情页面
+   */
+  onMovieTap: function(event) {
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: 'movie-detail/movie-detail?id='+movieId,
+    })
+  },
+  /**
+   * 输入框内容提交时触发
+   */
+  onBindChange: function(event) {
+    var text = event.detail.value;
+    var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+    this.getMovieListData(searchUrl, "searchResult", "");
+  },
+  /**
+   * 搜索框‘X’图标被点击时触发
+   */
+  onCancelImgTap: function(event) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {},
+    });
+  },
+  /**
+   * 输入框发生输入时触发的函数
+   */
+  onBindFocus: function(event) {
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true,
+    });
   },
 
   /**

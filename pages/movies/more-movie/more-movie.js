@@ -14,11 +14,31 @@ Page({
     isEmpty: true,
   },
   /**
+   *下拉刷新数据 
+   */
+  onPullDownRefresh: function(event) {
+    var refreshUrl=this.data.requestUrl+"?start=0&count=20";
+    var movies=this.data.movies;
+    var isEmpty=this.data.isEmpty;
+    movies={};
+    isEmpty=true;
+    this.setData({
+      movies:movies,
+      isEmpty:isEmpty,
+    });
+    util.http(refreshUrl,this.processDoubanData);
+    wx.showNavigationBarLoading();
+  },
+  /**
    * 【更多电影页面】下滑数据加载
    */
   onScrollLower: function(event) {
     var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
     util.http(nextUrl, this.processDoubanData);
+
+    wx.showLoading({
+      title: 'Loading...',
+    })
   },
 
   /**
@@ -66,16 +86,16 @@ Page({
       movies.push(temp);
     }
     var totalMovies = {};
-  
+
     var tempTotalCount = this.data.totalCount + 20;
     //如果不是第一次加载电影数据
-    if(!this.data.isEmpty){
-      var oldMovies=this.data.movies;
-      var newMovies=oldMovies.concat(movies);
-    }else{
-      newMovies=movies;
+    if (!this.data.isEmpty) {
+      var oldMovies = this.data.movies;
+      var newMovies = oldMovies.concat(movies);
+    } else {
+      newMovies = movies;
       this.setData({
-        isEmpty:false,
+        isEmpty: false,
       });
     }
 
@@ -83,6 +103,8 @@ Page({
       movies: newMovies,
       totalCount: tempTotalCount,
     });
+    wx.hideLoading();
+    wx.stopPullDownRefresh();
   },
 
 
