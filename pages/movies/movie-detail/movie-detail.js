@@ -11,6 +11,17 @@ Page({
 
 
   },
+  /**
+   * 查看图片
+   */
+
+  viewMoviePostImg: function(event) {
+    var src=event.currentTarget.dataset.src;
+    wx.previewImage({
+      urls: [src],
+      current:src,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -25,7 +36,7 @@ Page({
    * http请求回调函数
    */
   processDoubanData: function(data) {
-    if(!data){
+    if (!data) {
       return;
     }
     var director = {
@@ -58,9 +69,9 @@ Page({
       castsInfo: util.convertToCastInfos(data.casts),
       summary: data.summary,
     }
-    
+
     this.setData({
-      movie:movie,
+      movie: movie,
     });
   },
 

@@ -14,6 +14,16 @@ Page({
     isEmpty: true,
   },
   /**
+   * 电影被点击时
+   * 触发进入电影详情界面
+   */
+  onMovieTap:function(event){
+    var movieId=event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id='+movieId,
+    })
+  },
+  /**
    *下拉刷新数据 
    */
   onPullDownRefresh: function(event) {

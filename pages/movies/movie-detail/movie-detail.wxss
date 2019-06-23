@@ -40,18 +40,18 @@
 .like{
     display:flex;
     flex-direction: row;
-    margin-top: 30rpx;
+    margin-top: 50rpx;
     margin-left: 40rpx;
 }
 
 .highlight-font{
     color: #f21146;
-    font-size:22rpx;
+    font-size:27rpx;
     margin-right: 10rpx;
 }
 
 .plain-font{
-    color: #666;
+    color: #333;
     font-size:22rpx;
     margin-right: 30rpx;
 }
@@ -71,9 +71,13 @@
     color: #777777;
 }
 
+.synopsis-font{
+  color: #999;
+}
+
 .original-title{
     color: #1f3463;
-    font-size: 24rpx;
+    font-size: 28rpx;
     font-weight: bold;
     margin-bottom: 40rpx;
 }
