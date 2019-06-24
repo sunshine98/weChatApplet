@@ -1,0 +1,3 @@
+<!--pages/map/map.wxml-->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markers}}" bindmarkertap="onMarketerTap"></map>
+<button type='primary' bindtap='onOpenLockTap'>一键开锁</button>

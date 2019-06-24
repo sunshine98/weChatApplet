@@ -8,8 +8,6 @@
 - [x] 电影详情页面
 
 
-
-
 # :see_no_evil:欢迎赞赏
 ![赞赏程序码](https://s1.ax1x.com/2018/09/10/iFZEtA.png)
 
