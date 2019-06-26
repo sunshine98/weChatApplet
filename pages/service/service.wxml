@@ -1,0 +1,23 @@
+<import src="wifi-template/wifi-template.wxml" />
+<view class='container'>
+  <view class='head'>
+    <text class="head-title">附近WIFI查询</text>
+  </view>
+  <view class='wifi-item'>
+    <template is="wifi-template" />
+  </view>
+  <view class='wifi-item'>
+    <template is="wifi-template" />
+  </view>
+  <view class='wifi-item'>
+    <template is="wifi-template" />
+  </view>
+  <view class='wifi-item'>
+    <template is="wifi-template" />
+  </view>
+  <view class='wifi-item'>
+    <template is="wifi-template" />
+  </view>
+
+
+</view>

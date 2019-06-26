@@ -1,0 +1,24 @@
+@import "wifi-template/wifi-template.wxss";
+.head{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 255, 0);
+  margin-bottom: 35rpx;
+  width: 100%;
+  height:100rpx;
+}
+
+.head-title{
+  margin: auto;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.wifi-item{
+  margin-bottom: 10px;
+}
+
+.container{
+  background-color: rgb(250, 0, 0);
+}

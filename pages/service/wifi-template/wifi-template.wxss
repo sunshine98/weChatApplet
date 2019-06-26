@@ -1,0 +1,22 @@
+.wifiContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(123, 252, 134);
+}
+
+.title{
+  margin-right: 20rpx;
+  color: #333;
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+
+.value{
+  color: #666;
+  font-size: 34rpx;
+}
+
+.info-item{
+  margin-top: 10rpx;
+}

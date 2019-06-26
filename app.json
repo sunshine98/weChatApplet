@@ -6,6 +6,7 @@
     "pages/movies/movies",
     "pages/movies/more-movie/more-movie",
     "pages/movies/movie-detail/movie-detail",
+    "pages/service/service",
     "pages/map/map"
   ],
   "window": {
@@ -22,10 +23,10 @@
         "selectedIconPath": "/images/tab/yuedu_hl.png"
       },
       {
-        "pagePath": "pages/map/map",
-        "text": "地图",
-        "iconPath": "/images/icon/un_map.png",
-        "selectedIconPath": "/images/icon/map.png"
+        "pagePath": "pages/service/service",
+        "text": "WIFI",
+        "iconPath": "/images/icon/un-wifi.png",
+        "selectedIconPath": "/images/icon/wifi.png"
       },
       {
         "pagePath": "pages/movies/movies",
@@ -35,11 +36,9 @@
       }
     ]
   },
-  "permission":{
-    "scope.userLocation":{
-      "desc":"小程序想要获取您的地理位置"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序想要获取您的地理位置"
     }
   }
-
-
 }
