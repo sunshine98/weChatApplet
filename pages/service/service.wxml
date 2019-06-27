@@ -3,21 +3,20 @@
   <view class='head'>
     <text class="head-title">附近WIFI查询</text>
   </view>
-  <view class='wifi-item'>
-    <template is="wifi-template" />
-  </view>
-  <view class='wifi-item'>
-    <template is="wifi-template" />
-  </view>
-  <view class='wifi-item'>
-    <template is="wifi-template" />
-  </view>
-  <view class='wifi-item'>
-    <template is="wifi-template" />
-  </view>
-  <view class='wifi-item'>
-    <template is="wifi-template" />
+  <view class='location'>
+    <view class='longitude'>
+      <text class='title'>经度</text>
+      <text class='value'>{{longitude}}</text>
+    </view>
+    <view class='latitude'>
+      <text class='title'>纬度</text>
+      <text class='value'>{{latitude}}</text>
+    </view>
   </view>
 
 
+
+  <view class='wifi-item' wx:for="{{wifiInfo}}" wx:for-item="item">
+    <template is="wifi-template" data="{{...item}}" />
+  </view>
 </view>

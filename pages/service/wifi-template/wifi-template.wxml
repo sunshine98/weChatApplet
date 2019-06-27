@@ -2,19 +2,19 @@
   <view class='wifiContainer'>
     <view class='info-item'>
       <text class='title'>地点:</text>
-      <text class='value'>南昌航空大学</text>
+      <text class='value'>{{name}}</text>
     </view>
     <view class='info-item'>
       <text class='title'>介绍:</text>
-      <text class='value'>南昌航空大学A栋教学楼</text>
+      <text class='value'>{{intro}}</text>
     </view>
     <view class='info-item'>
       <text class='title'>详细地址:</text>
-      <text class='value'>江西南昌市丰和南大道696号</text>
+      <text class='value'>{{address}}</text>
     </view>
     <view class='info-item'>
       <text class='title'>距离:</text>
-      <text class='value'>22.7</text>
+      <text class='value'>{{distance}}</text>
       <text class='distance-font'>m</text>
     </view>
   </view>
